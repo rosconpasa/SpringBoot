@@ -1,10 +1,8 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
-  "features": {
-    "ghcr.io/devcontainers-extra/features/springboot-sdkman:2": {}
-  },
+  "name": "Spring Boot Standard Java Environment",
+  // Usamos una imagen de Java estándar, que es más fiable.
+  "image": "mcr.microsoft.com/devcontainers/java:17", 
   
-  // --- AÑADIR ESTA SECCIÓN ---
   "customizations": {
     "vscode": {
       "extensions": [
@@ -13,6 +11,8 @@
       ]
     }
   },
-  // --- AÑADIR ESTA SECCIÓN ---
-  "forwardPorts": [8080]
+  
+  "forwardPorts": [8080], 
+  // Opcional: Ejecutar la instalación de dependencias después de la creación
+  "postCreateCommand": "bash ./mvnw install" 
 }
